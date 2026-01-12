@@ -1,9 +1,11 @@
 import HeroBanner from "@/components/HeroBanner";
+import PopularCategories from "@/components/PopularCategories";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-black">
+    <main className="max-w-7xl mx-auto min-h-screen">
       <HeroBanner />
+      <PopularCategories />
     </main>
   );
 }

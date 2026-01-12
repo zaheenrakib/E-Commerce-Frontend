@@ -6,7 +6,7 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from "luci
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 dark:bg-zinc-950 dark:border-zinc-800 pt-16 pb-8">
+    <footer className="max-w-7xl mx-auto pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* Newsletter Section */}
