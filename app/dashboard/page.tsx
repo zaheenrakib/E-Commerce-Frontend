@@ -19,18 +19,18 @@ const Dashboard = () => {
       
       {/* Greeting */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-2xl font-bold">
           Good Afternoon, <span className="text-teal-600">Zaheen Rakib!</span>
         </h1>
-        <p className="text-gray-500 dark:text-gray-400 mt-1">
+        <p className="mt-1 text-gray-400">
           Here's what's happening with your account today.
         </p>
       </div>
 
       {/* Quick Stats (Order Status) */}
-      <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm">
+      <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="font-semibold text-lg text-gray-900 dark:text-white">My Orders</h2>
+          <h2 className="font-semibold text-lg">My Orders</h2>
           <Link href="/dashboard/orders" className="text-sm text-teal-600 hover:underline flex items-center gap-1">
             See More <ChevronRight className="h-4 w-4" />
           </Link>
@@ -43,10 +43,10 @@ const Dashboard = () => {
             { label: "Review", icon: Star, count: 0 },
           ].map((stat) => (
              <div key={stat.label} className="flex flex-col items-center gap-3 group cursor-pointer">
-               <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-teal-600 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition-colors">
+               <div className="h-12 w-12 rounded-full  flex items-center justify-center bg-teal-600 text-white transition-colors">
                  <stat.icon className="h-6 w-6" />
                </div>
-               <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{stat.label}</span>
+               <span className="text-sm font-medium">{stat.label}</span>
              </div>
           ))}
         </div>
@@ -97,8 +97,8 @@ const Dashboard = () => {
 
       {/* Utility Cards */}
       <div className="grid md:grid-cols-2 gap-6">
-         <Link href="/dashboard/tracking" className="flex items-center gap-4 p-6 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:border-blue-500 transition-colors">
-            <div className="h-12 w-12 rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 flex items-center justify-center">
+         <Link href="/dashboard/tracking" className="flex items-center gap-4 p-6 bg-white  rounded-xl border border-gray-100 shadow-sm transition-colors">
+            <div className="h-12 w-12 rounded-full bg-green-50  text-green-600 flex items-center justify-center">
               <Truck className="h-6 w-6" />
             </div>
             <div>
@@ -107,7 +107,7 @@ const Dashboard = () => {
             </div>
          </Link>
 
-         <Link href="/dashboard/address" className="flex items-center gap-4 p-6 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:border-blue-500 transition-colors">
+         <Link href="/dashboard/address" className="flex items-center gap-4 p-6 bg-white  rounded-xl border border-gray-100 shadow-sm transition-colors">
             <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-teal-600 flex items-center justify-center">
               <MapPin className="h-6 w-6" />
             </div>
@@ -121,14 +121,16 @@ const Dashboard = () => {
       {/* Recent Orders - Empty State */}
       <div className="space-y-4">
         <h2 className="font-semibold text-lg text-gray-900 dark:text-white">Recent Orders</h2>
-        <div className="bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm p-12 text-center">
-          <div className="mx-auto h-16 w-16 bg-gray-100 dark:bg-zinc-800 rounded-full flex items-center justify-center text-gray-400 mb-4">
+        <div className="bg-white  rounded-xl border border-gray-100 shadow-sm p-12 text-center">
+          <div className="mx-auto h-16 w-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
             <Package className="h-8 w-8" />
           </div>
-          <p className="text-gray-900 dark:text-white font-medium">Look Like You Didn't Place Any Order Yet</p>
-          <Link href="/products" className="inline-block mt-4 text-teal-600 hover:underline text-sm font-medium">
+          <p className=" font-medium">Look Like You Didn't Place Any Order Yet</p>
+          <button className="p-2">
+            <Link href="/products" className="inline-block mt-4  text-sm font-medium text-white bg-teal-600 p-4 rounded-2xl">
             Start Shopping
           </Link>
+          </button>
         </div>
       </div>
 

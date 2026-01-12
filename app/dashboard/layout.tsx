@@ -43,18 +43,18 @@ export default function DashboardLayout({
         <aside className="w-full md:w-64 shrink-0 space-y-8">
           
           {/* User Header */}
-          <div className="flex items-center gap-4 p-4 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm">
-            <div className="h-12 w-12 rounded-full bg-gray-200 dark:bg-zinc-800 overflow-hidden flex items-center justify-center text-xl font-bold text-gray-500">
+          <div className="flex items-center gap-4 p-4 bg-white  rounded-xl border border-gray-100 shadow-sm">
+            <div className="h-12 w-12 rounded-full bg-gray-200  overflow-hidden flex items-center justify-center text-xl font-bold">
               ZR
             </div>
             <div>
-              <p className="font-semibold text-gray-900 dark:text-white">Zaheen Rakib</p>
-              <p className="text-xs text-gray-500">Member since 2023</p>
+              <p className="font-semibold">Zaheen Rakib</p>
+              <p className="text-xs">Member since 2023</p>
             </div>
           </div>
 
           {/* Navigation Links */}
-          <nav className="bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm overflow-hidden">
+          <nav className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
              <div className="py-2">
                {SIDEBAR_LINKS.map((link) => {
                  const isActive = pathname === link.href;
@@ -64,8 +64,8 @@ export default function DashboardLayout({
                      href={link.href}
                      className={`flex items-center gap-3 px-6 py-3 text-sm font-medium transition-colors relative ${
                        isActive 
-                         ? "text-teal-600 bg-blue-50 dark:bg-blue-900/10" 
-                         : "text-gray-600 hover:text-teal-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-zinc-800"
+                         ? "text-teal-600 bg-blue-50" 
+                         : "text-gray-600 hover:text-teal-600 hover:bg-gray-50 dark:text-gray-400"
                      }`}
                    >
                      {isActive && (
