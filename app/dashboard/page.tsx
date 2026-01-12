@@ -20,7 +20,7 @@ const Dashboard = () => {
       {/* Greeting */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Good Afternoon, <span className="text-blue-600">Zaheen Rakib!</span>
+          Good Afternoon, <span className="text-teal-600">Zaheen Rakib!</span>
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mt-1">
           Here's what's happening with your account today.
@@ -31,7 +31,7 @@ const Dashboard = () => {
       <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-semibold text-lg text-gray-900 dark:text-white">My Orders</h2>
-          <Link href="/dashboard/orders" className="text-sm text-blue-600 hover:underline flex items-center gap-1">
+          <Link href="/dashboard/orders" className="text-sm text-teal-600 hover:underline flex items-center gap-1">
             See More <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
@@ -43,7 +43,7 @@ const Dashboard = () => {
             { label: "Review", icon: Star, count: 0 },
           ].map((stat) => (
              <div key={stat.label} className="flex flex-col items-center gap-3 group cursor-pointer">
-               <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+               <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-teal-600 flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition-colors">
                  <stat.icon className="h-6 w-6" />
                </div>
                <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{stat.label}</span>
@@ -108,7 +108,7 @@ const Dashboard = () => {
          </Link>
 
          <Link href="/dashboard/address" className="flex items-center gap-4 p-6 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800 shadow-sm hover:border-blue-500 transition-colors">
-            <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center">
+            <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-teal-600 flex items-center justify-center">
               <MapPin className="h-6 w-6" />
             </div>
             <div>
@@ -126,7 +126,7 @@ const Dashboard = () => {
             <Package className="h-8 w-8" />
           </div>
           <p className="text-gray-900 dark:text-white font-medium">Look Like You Didn't Place Any Order Yet</p>
-          <Link href="/products" className="inline-block mt-4 text-blue-600 hover:underline text-sm font-medium">
+          <Link href="/products" className="inline-block mt-4 text-teal-600 hover:underline text-sm font-medium">
             Start Shopping
           </Link>
         </div>

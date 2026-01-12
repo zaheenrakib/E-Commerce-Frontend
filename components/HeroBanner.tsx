@@ -11,7 +11,7 @@ const SLIDES = [
     title: "Experience True Audio Perfection",
     subtitle: "Immerse yourself in crystal-clear sound with our latest noise-cancelling headphones.",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop",
-    color: "from-blue-600 to-purple-600",
+    color: "from-teal-600 to-purple-600",
     bg: "bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900",
     link: "/products/headphones"
   },

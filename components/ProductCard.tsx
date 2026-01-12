@@ -25,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Badges */}
       <div className="absolute top-3 left-3 z-10 flex gap-2">
         {product.isNew && (
-          <span className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+          <span className="bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-full">
             New
           </span>
         )}
@@ -53,7 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         
         {/* Quick Add Button */}
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-          <button className="w-full bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-medium py-2 rounded-lg shadow-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors flex items-center justify-center gap-2">
+          <button className="w-full bg-white dark:bg-zinc-800 text-gray-900 dark:text-white font-medium py-2 rounded-lg shadow-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-600 transition-colors flex items-center justify-center gap-2">
             <ShoppingCart className="h-4 w-4" />
             Add to Cart
           </button>
@@ -65,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="text-xs text-gray-500 dark:text-gray-400 mb-1 font-medium uppercase tracking-wider">
           {product.category}
         </div>
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-1 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-1 group-hover:text-teal-600 transition-colors">
           <Link href={`/products/${product.slug}`}>
             {product.name}
           </Link>

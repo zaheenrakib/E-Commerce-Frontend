@@ -64,12 +64,12 @@ export default function DashboardLayout({
                      href={link.href}
                      className={`flex items-center gap-3 px-6 py-3 text-sm font-medium transition-colors relative ${
                        isActive 
-                         ? "text-blue-600 bg-blue-50 dark:bg-blue-900/10" 
-                         : "text-gray-600 hover:text-blue-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-zinc-800"
+                         ? "text-teal-600 bg-blue-50 dark:bg-blue-900/10" 
+                         : "text-gray-600 hover:text-teal-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-zinc-800"
                      }`}
                    >
                      {isActive && (
-                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-r-full" />
+                       <div className="absolute left-0 top-0 bottom-0 w-1 bg-teal-600 rounded-r-full" />
                      )}
                      <link.icon className="h-5 w-5" />
                      {link.name}

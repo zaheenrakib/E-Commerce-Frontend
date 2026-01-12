@@ -27,10 +27,10 @@ const Navbar = () => {
           
           {/* Left: Logo */}
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold shrink-0">
-            <div className="bg-blue-600 text-white p-1 rounded-lg">
+            <div className="bg-teal-600 text-white p-1 rounded-lg">
               <ShoppingCart className="h-6 w-6" />
             </div>
-            <span>Store<span className="text-blue-600">Name</span></span>
+            <span>Best<span className="text-teal-600">Buy</span></span>
           </Link>
 
           {/* Middle: Search Bar (Hidden on Mobile) */}
@@ -48,7 +48,7 @@ const Navbar = () => {
                 placeholder="Search for products..."
                 className="flex-1 px-4 py-2.5 border border-gray-300 border-l-0 bg-white text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:bg-zinc-900 dark:border-zinc-700"
               />
-              <button className="px-6 py-2.5 bg-blue-600 text-white rounded-r-full hover:bg-blue-700 transition-colors">
+              <button className="px-6 py-2.5 bg-teal-600 text-white rounded-r-full hover:bg-blue-700 transition-colors">
                 <Search className="h-5 w-5" />
               </button>
             </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
             </button>
 
             {/* Wishlist */}
-            <Link href="/wishlist" className="hidden md:flex flex-col items-center gap-1 group text-gray-700 dark:text-gray-300 hover:text-blue-600">
+            <Link href="/wishlist" className="hidden md:flex flex-col items-center gap-1 group text-gray-700 dark:text-gray-300 hover:text-teal-600">
               <div className="relative">
                 <Heart className="h-6 w-6" />
                 <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-[10px] font-bold flex items-center justify-center rounded-full">3</span>
@@ -76,10 +76,10 @@ const Navbar = () => {
               onMouseEnter={() => setIsCartOpen(true)}
               onMouseLeave={() => setIsCartOpen(false)}
             >
-              <Link href="/cart" className="flex flex-col items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-600">
+              <Link href="/cart" className="flex flex-col items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-teal-600">
                 <div className="relative">
                   <ShoppingCart className="h-6 w-6" />
-                  <span className="absolute -top-1 -right-1 h-4 w-4 bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center rounded-full">2</span>
+                  <span className="absolute -top-1 -right-1 h-4 w-4 bg-teal-600 text-white text-[10px] font-bold flex items-center justify-center rounded-full">2</span>
                 </div>
                 <span className="hidden md:block text-xs font-medium">Cart</span>
               </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
                     <span>Total:</span>
                     <span>$499.49</span>
                   </div>
-                  <Link href="/cart" className="block w-full bg-blue-600 text-white text-center py-2 rounded-md text-sm font-medium hover:bg-blue-700">
+                  <Link href="/cart" className="block w-full bg-teal-600 text-white text-center py-2 rounded-md text-sm font-medium hover:bg-blue-700">
                     View Cart
                   </Link>
                 </div>
@@ -118,7 +118,7 @@ const Navbar = () => {
             </div>
 
             {/* User Auth */}
-            <Link href="/login" className="hidden md:flex flex-col items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-600">
+            <Link href="/login" className="hidden md:flex flex-col items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-teal-600">
               <User className="h-6 w-6" />
               <span className="text-xs font-medium">Login</span>
             </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
           <nav className="flex justify-center items-center h-12">
              <ul className="flex items-center gap-8">
                <li>
-                 <Link href="/products" className="text-sm font-semibold text-gray-900 dark:text-white hover:text-blue-600">
+                 <Link href="/products" className="text-sm font-semibold text-gray-900 dark:text-white hover:text-teal-600">
                    All Products
                  </Link>
                </li>
@@ -148,7 +148,7 @@ const Navbar = () => {
                  <li key={category}>
                    <Link 
                      href={`/products?category=${category}`} 
-                     className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+                     className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-teal-600 transition-colors"
                    >
                      {category}
                    </Link>
@@ -205,7 +205,7 @@ const Navbar = () => {
                 <User className="h-5 w-5" />
                 <span>My Account</span>
               </Link>
-              <Link href="/login" className="flex items-center gap-3 text-blue-600 font-medium">
+              <Link href="/login" className="flex items-center gap-3 text-teal-600 font-medium">
                 <LogIn className="h-5 w-5" />
                 <span>Sign In / Register</span>
               </Link>

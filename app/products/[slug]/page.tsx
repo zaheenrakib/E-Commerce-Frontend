@@ -128,9 +128,9 @@ export default function ProductDetailsPage() {
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
+          <Link href="/" className="hover:text-teal-600">Home</Link>
           <ChevronRight className="h-4 w-4" />
-          <Link href="/products" className="hover:text-blue-600">Products</Link>
+          <Link href="/products" className="hover:text-teal-600">Products</Link>
           <ChevronRight className="h-4 w-4" />
           <span className="text-gray-900 dark:text-white font-medium truncate max-w-[200px]">
             {product.name}
@@ -165,7 +165,7 @@ export default function ProductDetailsPage() {
                   onClick={() => setSelectedImage(index)}
                   className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${
                     selectedImage === index
-                      ? "border-blue-600 ring-2 ring-blue-600/20"
+                      ? "border-teal-600 ring-2 ring-teal-600/20"
                       : "border-transparent hover:border-gray-300 dark:hover:border-zinc-700"
                   }`}
                 >
@@ -215,7 +215,7 @@ export default function ProductDetailsPage() {
                 </span>
               </div>
               <div className="w-px h-5 bg-gray-300 dark:bg-zinc-700"></div>
-              <button className="flex items-center gap-2 text-sm text-blue-600 hover:underline">
+              <button className="flex items-center gap-2 text-sm text-teal-600 hover:underline">
                 <Share2 className="h-4 w-4" />
                 Share
               </button>
@@ -255,7 +255,7 @@ export default function ProductDetailsPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20">
+                <button className="flex-1 bg-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-600/20">
                   <ShoppingCart className="h-5 w-5" />
                   Add to Cart
                 </button>
@@ -268,7 +268,7 @@ export default function ProductDetailsPage() {
             {/* Features/Trust */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-8 border-t border-gray-100 dark:border-zinc-800">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-600">
+                <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-teal-600">
                   <Truck className="h-5 w-5" />
                 </div>
                 <div className="text-sm">
@@ -307,13 +307,13 @@ export default function ProductDetailsPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-8 py-4 font-medium text-sm transition-colors relative ${
                   activeTab === tab
-                    ? "text-blue-600"
+                    ? "text-teal-600"
                     : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                 }`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
                 {activeTab === tab && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-600"></span>
                 )}
               </button>
             ))}
