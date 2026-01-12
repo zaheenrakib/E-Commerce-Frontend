@@ -15,7 +15,7 @@ import {
 
 const Dashboard = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 p-4 md:p-8 font-sans bg-gray-100">
       
       {/* Greeting */}
       <div>
@@ -31,9 +31,9 @@ const Dashboard = () => {
       <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-semibold text-lg">My Orders</h2>
-          <Link href="/dashboard/orders" className="text-sm text-teal-600 hover:underline flex items-center gap-1">
+          {/* <Link href="/dashboard/orders" className="text-sm text-teal-600 hover:underline flex items-center gap-1">
             See More <ChevronRight className="h-4 w-4" />
-          </Link>
+          </Link> */}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {[
