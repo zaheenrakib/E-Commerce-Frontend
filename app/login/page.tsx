@@ -27,7 +27,7 @@ const LoginPage: React.FC = () => {
               </div>
               <input
                 type="text"
-                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm transition-all"
+                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-white text-sm transition-all"
                 placeholder="example@mail.com"
                 required
               />
@@ -40,7 +40,7 @@ const LoginPage: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700">
                 Password
               </label>
-              <a href="#" className="text-xs text-blue-600 hover:underline">
+              <a href="#" className="text-xs text-teal-600 hover:underline">
                 Forgot password?
               </a>
             </div>
@@ -50,7 +50,7 @@ const LoginPage: React.FC = () => {
               </div>
               <input
                 type={showPassword ? "text" : "password"}
-                className="block w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm transition-all"
+                className="block w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-white text-sm transition-all"
                 placeholder="••••••••"
                 required
               />
@@ -67,7 +67,7 @@ const LoginPage: React.FC = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
           >
             Sign In
           </button>
@@ -77,7 +77,7 @@ const LoginPage: React.FC = () => {
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{' '}
-            <Link href="/register" className="text-blue-600 font-medium hover:underline">
+            <Link href="/register" className="text-teal-600 font-medium hover:underline">
               Create an account
             </Link>
           </p>

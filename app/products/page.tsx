@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import { Search, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { useState, useMemo } from "react";
+import { Search, ChevronDown } from "lucide-react";
 import ProductCard, { Product } from "@/components/ProductCard";
 
 // Mock Data
@@ -90,31 +90,34 @@ const PRODUCTS: Product[] = [
   },
 ];
 
-const CATEGORIES = ["All", "Electronics", "Wearables", "Furniture", "Accessories", "Clothing", "Home"];
+const CATEGORIES = ["All", "Electronics", "Wearables", "Furniture", "Accessories", "Clothing", "Home"]; 
+const PRICE_RANGES = [
+  { key: "all", label: "All prices", range: [0, Infinity] },
+  { key: "0-50", label: "0 to 50", range: [0, 50] },
+  { key: "50-100", label: "50 to 100", range: [50, 100] },
+  { key: "100-200", label: "100 to 200", range: [100, 200] },
+  { key: "200-300", label: "200 to 300", range: [200, 300] },
+  { key: "300+", label: "More than 300", range: [300, Infinity] },
+];
 
 const ProductsPage = () => {
-  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("featured");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [priceRange, setPriceRange] = useState<string>("all");
 
-  // Filter and Sort Logic
   const filteredProducts = useMemo(() => {
     let result = [...PRODUCTS];
 
-    // Filter by Category
     if (selectedCategory !== "All") {
       result = result.filter((product) => product.category === selectedCategory);
     }
 
-    // Filter by Search
-    if (searchQuery) {
-      result = result.filter((product) =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+    const pr = PRICE_RANGES.find((r) => r.key === priceRange);
+    if (pr) {
+      const [min, max] = pr.range;
+      result = result.filter((p) => p.price >= min && p.price <= max);
     }
 
-    // Sort
     switch (sortBy) {
       case "price-low":
         result.sort((a, b) => a.price - b.price);
@@ -126,113 +129,118 @@ const ProductsPage = () => {
         result.sort((a, b) => b.rating - a.rating);
         break;
       default:
-        // Featured or default order
         break;
     }
 
     return result;
-  }, [searchQuery, selectedCategory, sortBy]);
+  }, [selectedCategory, sortBy, priceRange]);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black pb-20">
-      {/* Header & Controls */}
-      <div className="bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 sticky top-16 z-30">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
-            
-            {/* Title & Count */}
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Shop All Products</h1>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Showing {filteredProducts.length} results
-              </p>
-            </div>
-
-            {/* Search & Actions */}
-            <div className="flex w-full md:w-auto gap-3">
-              <div className="relative flex-1 md:w-80">
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-                />
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-              </div>
-              
-              <button 
-                className="md:hidden p-2.5 rounded-lg border border-gray-300 dark:border-zinc-700 bg-white dark:bg-zinc-800"
-                onClick={() => setIsFilterOpen(!isFilterOpen)}
-              >
-                <SlidersHorizontal className="h-5 w-5 text-gray-600 dark:text-gray-300" />
-              </button>
-            </div>
-          </div>
-
-          {/* Filters Row (Desktop) */}
-          <div className={`mt-4 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between ${isFilterOpen ? 'block' : 'hidden md:flex'}`}>
-            <div className="flex flex-wrap gap-2">
-              {CATEGORIES.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    selectedCategory === category
-                      ? "bg-gray-900 text-white dark:bg-white dark:text-black"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-zinc-800 dark:text-gray-300 dark:hover:bg-zinc-700"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Sort by:</span>
-              <div className="relative">
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none pl-3 pr-8 py-1.5 rounded-lg bg-transparent font-medium text-sm text-gray-900 dark:text-white focus:outline-none cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-800"
-                >
-                  <option value="featured">Featured</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Top Rated</option>
-                </select>
-                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 pointer-events-none" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Product Grid */}
+    <div className="min-h-screen max-w-7xl mx-auto pb-20">
       <div className="container mx-auto px-4 py-8">
-        {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-gray-100 dark:bg-zinc-800 mb-4">
-              <Search className="h-8 w-8 text-gray-400" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <aside className="lg:col-span-3">
+            <div className="bg-white rounded-xl shadow-md p-6 space-y-6">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3">Categories</h3>
+                <div className="space-y-2">
+                  {CATEGORIES.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        selectedCategory === category
+                          ? "bg-teal-700 text-white"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3">Price</h3>
+                <div className="space-y-2">
+                  {PRICE_RANGES.map((r) => (
+                    <label key={r.key} className="flex items-center gap-2 text-sm text-gray-700">
+                      <input
+                        type="radio"
+                        name="price"
+                        value={r.key}
+                        checked={priceRange === r.key}
+                        onChange={() => setPriceRange(r.key)}
+                        className="accent-teal-600"
+                      />
+                      {r.label}
+                    </label>
+                  ))}
+                </div>
+                <div className="flex gap-3 mt-4">
+                  <button
+                    onClick={() => { setSelectedCategory("All"); setPriceRange("all"); }}
+                    className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700"
+                  >
+                    Reset
+                  </button>
+                  <button className="px-4 py-2 rounded-lg bg-teal-600 text-white">
+                    Apply
+                  </button>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">No products found</h3>
-            <p className="text-gray-500 dark:text-gray-400 mt-2">
-              Try adjusting your search or filters to find what you're looking for.
-            </p>
-            <button 
-              onClick={() => {setSearchQuery(""); setSelectedCategory("All");}}
-              className="mt-6 px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Clear Filters
-            </button>
-          </div>
-        )}
+          </aside>
+
+          <main className="lg:col-span-9">
+            <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900">{selectedCategory === "All" ? "All Products" : selectedCategory}</h2>
+                  <p className="text-sm text-gray-500">{filteredProducts.length} items found</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-500">Sort by:</span>
+                  <div className="relative">
+                    <select
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value)}
+                      className="appearance-none pl-3 pr-8 py-2 rounded-lg bg-gray-50 font-medium text-sm text-gray-900 focus:outline-none cursor-pointer hover:bg-gray-100"
+                    >
+                      <option value="featured">Featured</option>
+                      <option value="price-low">Price: Low to High</option>
+                      <option value="price-high">Price: High to Low</option>
+                      <option value="rating">Top Rated</option>
+                    </select>
+                    <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 pointer-events-none" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {filteredProducts.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-20">
+                <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+                  <Search className="h-8 w-8 text-gray-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">No products found</h3>
+                <p className="text-gray-500 mt-2">Try adjusting your filters to find what you're looking for.</p>
+                <button 
+                  onClick={() => { setSelectedCategory("All"); setPriceRange("all"); }}
+                  className="mt-6 px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
+          </main>
+        </div>
       </div>
     </div>
   );

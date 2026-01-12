@@ -2,11 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+    <footer className="bg-gray-200 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         
         {/* Newsletter Section */}
@@ -21,9 +21,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+              className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:border-teal-500 focus:outline-none"
             />
-            <button className="bg-teal-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
+            <button className="bg-teal-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-teal-700 transition-colors">
               Subscribe
             </button>
           </div>
@@ -33,9 +33,16 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="text-xl font-bold mb-4 block">
-              <span className="text-white">Best<span className="text-teal-600">Buy</span></span>
-            </Link>
+            {/* Left: Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="bg-teal-600 text-white p-2 rounded-xl transition-transform group-hover:scale-110">
+              <ShoppingCart className="h-5 w-5" />
+            </div>
+            <span className="text-xl font-bold tracking-tight text-teal-600">
+              Luxe<span className="text-teal-500">Mart</span>
+            </span>
+          </Link>
+          
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
               Your one-stop destination for premium products. Quality meets affordability in every purchase.
             </p>
@@ -46,7 +53,7 @@ const Footer = () => {
               <Link href="#" className="text-gray-400 hover:text-pink-600 transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-teal-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link href="#" className="text-gray-400 hover:text-red-600 transition-colors">

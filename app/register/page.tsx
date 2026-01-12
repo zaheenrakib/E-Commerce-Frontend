@@ -27,7 +27,7 @@ const Register: React.FC = () => {
               </div>
               <input
                 type="text"
-                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm transition-all"
+                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-white text-sm transition-all"
                 placeholder="John Doe"
                 required
               />
@@ -45,7 +45,7 @@ const Register: React.FC = () => {
               </div>
               <input
                 type="email"
-                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm transition-all"
+                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-white text-sm transition-all"
                 placeholder="name@example.com"
                 required
               />
@@ -63,7 +63,7 @@ const Register: React.FC = () => {
               </div>
               <input
                 type="tel"
-                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm transition-all"
+                className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-white text-sm transition-all"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
@@ -80,7 +80,7 @@ const Register: React.FC = () => {
               </div>
               <input
                 type={showPassword ? "text" : "password"}
-                className="block w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm transition-all"
+                className="block w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 bg-white text-sm transition-all"
                 placeholder="••••••••"
                 required
               />
@@ -100,13 +100,13 @@ const Register: React.FC = () => {
               <input
                 id="terms"
                 type="checkbox"
-                className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                className="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
                 required
               />
             </div>
             <div className="ml-3 text-sm">
               <label htmlFor="terms" className="text-gray-500">
-                I agree to the <a href="#" className="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>.
+                I agree to the <a href="#" className="text-teal-600 hover:underline">Terms of Service</a> and <a href="#" className="text-teal-600 hover:underline">Privacy Policy</a>.
               </label>
             </div>
           </div>
@@ -114,7 +114,7 @@ const Register: React.FC = () => {
           {/* Register Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm flex items-center justify-center group"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors shadow-sm flex items-center justify-center group"
           >
             Create Account
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -125,7 +125,7 @@ const Register: React.FC = () => {
         <div className="mt-8 text-center border-t border-gray-100 pt-6">
           <p className="text-sm text-gray-600">
             Already have an account?{' '}
-            <Link href="/login" className="text-blue-600 font-bold hover:underline">
+            <Link href="/login" className="text-teal-600 font-bold hover:underline">
               Sign In
             </Link>
           </p>

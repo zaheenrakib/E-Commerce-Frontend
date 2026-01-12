@@ -12,8 +12,8 @@ const AccountPage: React.FC = () => {
           {/* Left Section: My Profile Information */}
           <div className="lg:col-span-2 bg-white rounded-lg shadow-sm p-6 relative">
             <div className="flex justify-between items-center border-b pb-4 mb-6">
-              <h2 className="text-blue-600 font-semibold text-lg">My Profile Information</h2>
-              <button className="flex items-center text-gray-500 hover:text-blue-600 transition-colors text-sm">
+              <h2 className="text-teal-600 font-semibold text-lg">My Profile Information</h2>
+              <button className="flex items-center text-gray-500 hover:text-teal-600 transition-colors text-sm">
                 <Edit3 className="w-4 h-4 mr-1" />
                 Edit Profile
               </button>
@@ -38,7 +38,7 @@ const AccountPage: React.FC = () => {
           <div className="space-y-6">
             {/* Change Password Card */}
             <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-              <h2 className="text-blue-800 font-semibold text-lg mb-6">Change My Password</h2>
+              <h2 className="text-teal-800 font-semibold text-lg mb-6">Change My Password</h2>
               <div className="flex flex-col items-center mb-6">
                 <div className="flex items-center text-gray-400 mb-1">
                    <Key className="w-4 h-4 mr-1" />
@@ -46,14 +46,14 @@ const AccountPage: React.FC = () => {
                 </div>
                 <p className="text-xl tracking-tighter font-bold text-gray-800">**********</p>
               </div>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-md transition-colors shadow-sm">
+              <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-2.5 rounded-md transition-colors shadow-sm">
                 Change Password
               </button>
             </div>
 
             {/* Delete Account Card */}
             <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-              <h2 className="text-blue-800 font-semibold text-lg mb-6">Delete Your Account</h2>
+              <h2 className="text-teal-800 font-semibold text-lg mb-6">Delete Your Account</h2>
               <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2.5 rounded-md transition-colors shadow-sm flex items-center justify-center">
                 Delete
               </button>

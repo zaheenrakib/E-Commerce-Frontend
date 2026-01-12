@@ -26,10 +26,10 @@ const Navbar = () => {
           
           {/* Left: Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-teal-600 text-white p-2 rounded-xl transition-transform group-hover:scale-110">
+            <div className="bg-teal-700 text-white p-2 rounded-xl transition-transform group-hover:scale-110">
               <ShoppingCart className="h-5 w-5" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-teal-600">
+            <span className="text-xl font-bold tracking-tight text-teal-700">
               Luxe<span className="text-teal-500">Mart</span>
             </span>
           </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
                      </div>
                   </div>
                   <div className="space-y-2">
-                    <Link href="/cart" className="block w-full bg-black text-white text-center py-3 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors">
+                    <Link href="/cart" className="block w-full bg-teal-700 text-white text-center py-3 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors">
                       Checkout
                     </Link>
                     <Link href="/cart" className="block w-full bg-white text-black border border-gray-200 text-center py-3 rounded-full text-sm font-bold hover:bg-gray-50 transition-colors">
@@ -123,7 +123,7 @@ const Navbar = () => {
             </div>
 
             {/* User Auth */}
-            <Link href="/login" className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-teal-600 text-white text-sm font-medium hover:bg-teal-800 transition-colors shadow-sm">
+            <Link href="/login" className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-teal-800 text-white text-sm font-medium hover:bg-teal-700 transition-colors shadow-sm">
               <User className="h-4 w-4" />
               <span>Login</span>
             </Link>

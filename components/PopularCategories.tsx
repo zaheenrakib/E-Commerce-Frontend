@@ -31,7 +31,7 @@ const PopularCategories = () => {
   }, []);
 
   return (
-    <section className="px-4 py-8 bg-white">
+    <section className="px-4 py-8">
       <h2 className="text-4xl font-semibold text-gray-900 mb-6">
         Popular Categories
       </h2>

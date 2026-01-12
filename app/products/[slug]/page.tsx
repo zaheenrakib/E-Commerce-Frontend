@@ -62,8 +62,8 @@ const RELATED_PRODUCTS = [
   },
   {
     id: 3,
-    slug: "bluetooth-speaker",
-    name: "Bluetooth Speaker",
+    slug: "tealtooth-speaker",
+    name: "tealtooth Speaker",
     category: "Audio",
     price: 89.99,
     rating: 4.5,
@@ -183,7 +183,7 @@ export default function ProductDetailsPage() {
           {/* Right Column: Product Info */}
           <div className="flex flex-col">
             <div className="mb-2 flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs font-bold dark:bg-blue-900/30 dark:text-blue-300">
+              <span className="px-2.5 py-0.5 rounded-full bg-teal-100 text-teal-800 text-xs font-bold dark:bg-teal-900/30 dark:text-teal-300">
                 In Stock
               </span>
               <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -255,7 +255,7 @@ export default function ProductDetailsPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex-1 bg-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-600/20">
+                <button className="flex-1 bg-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-teal-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-teal-600/20">
                   <ShoppingCart className="h-5 w-5" />
                   Add to Cart
                 </button>
@@ -268,7 +268,7 @@ export default function ProductDetailsPage() {
             {/* Features/Trust */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-8 border-t border-gray-100 dark:border-zinc-800">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-teal-600">
+                <div className="p-2 bg-teal-50 dark:bg-teal-900/20 rounded-lg text-teal-600">
                   <Truck className="h-5 w-5" />
                 </div>
                 <div className="text-sm">

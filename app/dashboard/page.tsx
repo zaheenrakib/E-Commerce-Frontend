@@ -108,7 +108,7 @@ const Dashboard = () => {
          </Link>
 
          <Link href="/dashboard/address" className="flex items-center gap-4 p-6 bg-white  rounded-xl border border-gray-100 shadow-sm transition-colors">
-            <div className="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-teal-600 flex items-center justify-center">
+            <div className="h-12 w-12 rounded-full bg-teal-50 dark:bg-teal-900/20 text-teal-600 flex items-center justify-center">
               <MapPin className="h-6 w-6" />
             </div>
             <div>
