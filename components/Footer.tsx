@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="text-xl font-bold mb-4 block">
-              <span className="text-teal-600">Store</span>Name
+              <span className="text-white">Best<span className="text-teal-600">Buy</span></span>
             </Link>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
               Your one-stop destination for premium products. Quality meets affordability in every purchase.

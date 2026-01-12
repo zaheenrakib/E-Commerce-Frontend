@@ -30,7 +30,7 @@ const Navbar = () => {
             <div className="bg-teal-600 text-white p-1 rounded-lg">
               <ShoppingCart className="h-6 w-6" />
             </div>
-            <span>Best<span className="text-teal-600">Buy</span></span>
+            <span className="text-white">Best<span className="text-teal-600">Buy</span></span>
           </Link>
 
           {/* Middle: Search Bar (Hidden on Mobile) */}
