@@ -47,7 +47,7 @@ const HeroBanner = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
 
   return (
-    <div className="relative w-full h-[600px] md:h-[700px] bg-white overflow-hidden group">
+    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden group">
       
       {/* Slides */}
       {SLIDES.map((slide, index) => (
