@@ -6,8 +6,8 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from "luci
 
 const Footer = () => {
   return (
-    <footer className="max-w-7xl mx-auto pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-gray-50 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         
         {/* Newsletter Section */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16 items-center">
@@ -21,7 +21,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none dark:bg-zinc-900 dark:border-zinc-700"
+              className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
             />
             <button className="bg-teal-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
               Subscribe
